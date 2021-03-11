@@ -1,19 +1,19 @@
 package edu.pingpong.isp.isp;
 
-
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class TestProcesadorTexto {
 
 	private ProcesadorTexto procesador;
+	private ProcesadorTextoCorrecto procesadorCorrector;
 
 	@Before
 	public void setupProcesadorText() {
 		procesador = new ProcesadorTexto();
+		procesadorCorrector = new ProcesadorTextoCorrecto();
 	}
 
 	@Test
@@ -22,39 +22,41 @@ public class TestProcesadorTexto {
 		procesador.nueva("himporta");
 		procesador.nueva("la");
 		procesador.nueva("hortografia");
-		
+
 		assertEquals("No himporta la hortografia", procesador.texto());
 	}
-	
+
 	@Test
 	public void test_con_idioma_es() {
-		procesador.nueva("Tengo");
-		procesador.nueva("hambre");
-		
-		assertEquals("Tengo hambre", procesador.texto());
-		assertTrue(procesador.correcto(Idioma.ES));
-		assertFalse(procesador.correcto(Idioma.EN));
-		assertFalse(procesador.correcto(Idioma.CA));
+		procesadorCorrector.nueva("Tengo");
+		procesadorCorrector.nueva("hambre");
+
+		assertEquals("Tengo hambre", procesadorCorrector.texto());
+		assertTrue(procesadorCorrector.correcto(Idioma.ES));
+		assertFalse(procesadorCorrector.correcto(Idioma.EN));
+		assertFalse(procesadorCorrector.correcto(Idioma.CA));
 	}
 
+	@Test
 	public void test_con_idioma_en() {
-		procesador.nueva("I");
-		procesador.nueva("am");
-		procesador.nueva("angry");
+		procesadorCorrector.nueva("I");
+		procesadorCorrector.nueva("am");
+		procesadorCorrector.nueva("angry");
 
-		assertEquals("I am angry", procesador.texto());
-		assertTrue(procesador.correcto(Idioma.EN));
-		assertFalse(procesador.correcto(Idioma.ES));
-		assertFalse(procesador.correcto(Idioma.CA));
+		assertEquals("I am angry", procesadorCorrector.texto());
+		assertTrue(procesadorCorrector.correcto(Idioma.EN));
+		assertFalse(procesadorCorrector.correcto(Idioma.ES));
+		assertFalse(procesadorCorrector.correcto(Idioma.CA));
 	}
 
+	@Test
 	public void test_con_idioma_ca() {
-		procesador.nueva("tenc");
-		procesador.nueva("fam");
+		procesadorCorrector.nueva("tenc");
+		procesadorCorrector.nueva("fam");
 
-		assertEquals("tenc fam", procesador.texto());
-		assertTrue(procesador.correcto(Idioma.CA));
-		assertFalse(procesador.correcto(Idioma.ES));
-		assertFalse(procesador.correcto(Idioma.EN);
+		assertEquals("tenc fam", procesadorCorrector.texto());
+		assertTrue(procesadorCorrector.correcto(Idioma.CA));
+		assertFalse(procesadorCorrector.correcto(Idioma.ES));
+		assertFalse(procesadorCorrector.correcto(Idioma.EN));
 	}
 }
