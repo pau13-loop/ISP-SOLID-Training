@@ -5,7 +5,7 @@ import java.util.List;
 
 public enum Idioma {
 	
-	EN ("I","am","angry"), 
+	EN ("i","am","angry"), 
 	ES ("tengo","hambre"), 
 	CA ("tenc", "fam");
 	
