@@ -1,4 +1,4 @@
-# SIP Java Exercise
+# ISP Java Exercise
 
 > In this repository you'll find **ISP Principle Java Exercise**. This kata is to understand the SIP Principle that belongs to the SOLID Principles that you should follow to make your code cleaner and more readable. In case you don't know about how works this principle or how to apply it correctly below you'll find a link that will explain it and it has some examples where you can get an idea about how to work with this principle precisely and correctly.
 
