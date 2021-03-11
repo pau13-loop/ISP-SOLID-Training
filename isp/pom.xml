@@ -82,7 +82,7 @@
                 true
                 </addClasspath>
                 <mainClass>
-                  edu.pingpong.isp.App
+                  edu.pingpong.isp.isp.main.ProcesadorTextoApp
                 </mainClass>
             </manifest>
         <manifestEntries>
